@@ -43,25 +43,25 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // Map's Viewable Property Configuration
         mv.pitchEnabled = true
         mv.showsPointsOfInterest = false
-        mv.zoomEnabled = false
+        mv.zoomEnabled = true
         mv.showsBuildings = true
         
         // *** Camera Settings
         // Location Distance
-        var locationDistance:CLLocationDistance = 100.0
+        var locationDistance:CLLocationDistance = 5.0
         var mapCamera = MKMapCamera(lookingAtCenterCoordinate: gaLocation, fromEyeCoordinate: locationOffset, eyeAltitude: locationDistance)
         // Remove Points of Interest
         
         mv.setCamera(mapCamera, animated: true)
         
-        // Initial pin
-        var pinAnnotation = MKPointAnnotation()
-        pinAnnotation.coordinate = gaLocation
-        // Pin needs two pieces of information: title and subtitle
-        pinAnnotation.title = "GA"
-        pinAnnotation.subtitle = "Where we become cogs of the machine"
+//        // Initial pin
+//        var pinAnnotation = MKPointAnnotation()
+//        pinAnnotation.coordinate = gaLocation
+//        // Pin needs two pieces of information: title and subtitle
+//        pinAnnotation.title = "GA"
+//        pinAnnotation.subtitle = "Where we become cogs of the machine"
         
-        self.mv.addAnnotation(pinAnnotation)
+       // self.mv.addAnnotation(pinAnnotation)
         getMapData()
     }
     
@@ -96,7 +96,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     // Get back to main queue to put in pins based on received mapData
                     println(mapData.blazons)
-                    //self.placePins(mapData.blazons!)
+                    self.placePins(mapData.blazons!)
                 })
                 
             } else {
@@ -108,21 +108,24 @@ class ViewController: UIViewController, MKMapViewDelegate {
         downloadTask.resume()
     }
 
-//    //Our place pin function
-//    func placePins(mapData: [NSObject]){
-//        for blaze in mapData {
-//            var latitude:CLLocationDegrees  = blaze.valueForKey("blazonLat")
-//            var longitude:CLLocationDegrees = blaze.blazonLng.toInt()
-//            var pinAnnotation = MKPointAnnotation()
-//            
-//            pinAnnotation.coordinate = gaLocation
-//            // Pin needs two pieces of information: title and subtitle
-//            pinAnnotation.title = "GA"
-//            pinAnnotation.subtitle = "Where we become cogs of the machine"
-//            
-//            self.mv.addAnnotation(pinAnnotation)
-//        }
-//    }
+    //Our place pin function
+    func placePins(mapData: [NSObject]){
+        for blazon in mapData {
+            var blazonLatitude:CLLocationDegrees  = blazon.valueForKey("blazonLat") as Double
+            var blazonLongitude:CLLocationDegrees = blazon.valueForKey("blazonLng") as Double
+            
+            var pinLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(blazonLatitude, blazonLongitude)
+        
+            var pinAnnotation = MKPointAnnotation()
+            pinAnnotation.coordinate = pinLocation
+            // Pin needs two pieces of information: title and subtitle
+            pinAnnotation.title = blazon.valueForKey("blazonName") as String
+            pinAnnotation.subtitle = blazon.valueForKey("blazonText") as String
+            
+            
+            self.mv.addAnnotation(pinAnnotation)
+        }
+    }
 
     
 

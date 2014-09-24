@@ -44,9 +44,11 @@ struct Location {
         for blazon in groupBlazons{
             // See that it is working first
             var blazonText:AnyObject! = blazon.valueForKey("text")
+            var blazonName:AnyObject! = blazon.valueForKey("name")
             var blazonLat:AnyObject! = blazon.valueForKey("geolocation").valueForKey("lat")
             var blazonLng:AnyObject! = blazon.valueForKey("geolocation").valueForKey("lng")
-            var blazonData:[String: AnyObject] = ["blazonText" : blazonText, "blazonLat" : blazonLat, "blazonLng" : blazonLng]
+
+            var blazonData:[String: AnyObject] = ["blazonText" : blazonText, "blazonName" : blazonName, "blazonLat" : blazonLat, "blazonLng" : blazonLng]
             
             blazonsArray.append(blazonData as NSObject)
             

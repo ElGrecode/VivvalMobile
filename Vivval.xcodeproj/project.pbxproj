@@ -14,6 +14,7 @@
 		663019F719D2417A00939A1E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 663019F519D2417A00939A1E /* LaunchScreen.xib */; };
 		66301A0319D2417A00939A1E /* VivvalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66301A0219D2417A00939A1E /* VivvalTests.swift */; };
 		66301A1119D27D7100939A1E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66301A1019D27D7100939A1E /* Location.swift */; };
+		66B86D0D19D2B55700CD38F5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B86D0C19D2B55700CD38F5 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		66301A0119D2417A00939A1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66301A0219D2417A00939A1E /* VivvalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VivvalTests.swift; sourceTree = "<group>"; };
 		66301A1019D27D7100939A1E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		66B86D0C19D2B55700CD38F5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66B86D0D19D2B55700CD38F5 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +64,7 @@
 		663019DE19D2417A00939A1E = {
 			isa = PBXGroup;
 			children = (
+				66B86D0C19D2B55700CD38F5 /* MapKit.framework */,
 				663019E919D2417A00939A1E /* Vivval */,
 				663019FF19D2417A00939A1E /* VivvalTests */,
 				663019E819D2417A00939A1E /* Products */,
@@ -164,6 +168,11 @@
 				TargetAttributes = {
 					663019E619D2417A00939A1E = {
 						CreatedOnToolsVersion = 6.0.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					663019FB19D2417A00939A1E = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -409,6 +418,7 @@
 				66301A0819D2417A00939A1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66301A0919D2417A00939A1E /* Build configuration list for PBXNativeTarget "VivvalTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +427,7 @@
 				66301A0B19D2417A00939A1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
