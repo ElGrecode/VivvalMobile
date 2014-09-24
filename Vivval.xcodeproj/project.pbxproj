@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		663019ED19D2417A00939A1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663019EC19D2417A00939A1E /* AppDelegate.swift */; };
+		663019EF19D2417A00939A1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663019EE19D2417A00939A1E /* ViewController.swift */; };
+		663019F219D2417A00939A1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663019F019D2417A00939A1E /* Main.storyboard */; };
+		663019F419D2417A00939A1E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663019F319D2417A00939A1E /* Images.xcassets */; };
+		663019F719D2417A00939A1E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 663019F519D2417A00939A1E /* LaunchScreen.xib */; };
+		66301A0319D2417A00939A1E /* VivvalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66301A0219D2417A00939A1E /* VivvalTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		663019FD19D2417A00939A1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 663019DF19D2417A00939A1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 663019E619D2417A00939A1E;
+			remoteInfo = Vivval;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		663019E719D2417A00939A1E /* Vivval.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vivval.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		663019EB19D2417A00939A1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		663019EC19D2417A00939A1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		663019EE19D2417A00939A1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		663019F119D2417A00939A1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		663019F319D2417A00939A1E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		663019F619D2417A00939A1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		663019FC19D2417A00939A1E /* VivvalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VivvalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		66301A0119D2417A00939A1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66301A0219D2417A00939A1E /* VivvalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VivvalTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		663019E419D2417A00939A1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		663019F919D2417A00939A1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		663019DE19D2417A00939A1E = {
+			isa = PBXGroup;
+			children = (
+				663019E919D2417A00939A1E /* Vivval */,
+				663019FF19D2417A00939A1E /* VivvalTests */,
+				663019E819D2417A00939A1E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		663019E819D2417A00939A1E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				663019E719D2417A00939A1E /* Vivval.app */,
+				663019FC19D2417A00939A1E /* VivvalTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		663019E919D2417A00939A1E /* Vivval */ = {
+			isa = PBXGroup;
+			children = (
+				663019EC19D2417A00939A1E /* AppDelegate.swift */,
+				663019EE19D2417A00939A1E /* ViewController.swift */,
+				663019F019D2417A00939A1E /* Main.storyboard */,
+				663019F319D2417A00939A1E /* Images.xcassets */,
+				663019F519D2417A00939A1E /* LaunchScreen.xib */,
+				663019EA19D2417A00939A1E /* Supporting Files */,
+			);
+			path = Vivval;
+			sourceTree = "<group>";
+		};
+		663019EA19D2417A00939A1E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				663019EB19D2417A00939A1E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		663019FF19D2417A00939A1E /* VivvalTests */ = {
+			isa = PBXGroup;
+			children = (
+				66301A0219D2417A00939A1E /* VivvalTests.swift */,
+				66301A0019D2417A00939A1E /* Supporting Files */,
+			);
+			path = VivvalTests;
+			sourceTree = "<group>";
+		};
+		66301A0019D2417A00939A1E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				66301A0119D2417A00939A1E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		663019E619D2417A00939A1E /* Vivval */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66301A0619D2417A00939A1E /* Build configuration list for PBXNativeTarget "Vivval" */;
+			buildPhases = (
+				663019E319D2417A00939A1E /* Sources */,
+				663019E419D2417A00939A1E /* Frameworks */,
+				663019E519D2417A00939A1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vivval;
+			productName = Vivval;
+			productReference = 663019E719D2417A00939A1E /* Vivval.app */;
+			productType = "com.apple.product-type.application";
+		};
+		663019FB19D2417A00939A1E /* VivvalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66301A0919D2417A00939A1E /* Build configuration list for PBXNativeTarget "VivvalTests" */;
+			buildPhases = (
+				663019F819D2417A00939A1E /* Sources */,
+				663019F919D2417A00939A1E /* Frameworks */,
+				663019FA19D2417A00939A1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				663019FE19D2417A00939A1E /* PBXTargetDependency */,
+			);
+			name = VivvalTests;
+			productName = VivvalTests;
+			productReference = 663019FC19D2417A00939A1E /* VivvalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		663019DF19D2417A00939A1E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Design Gumption";
+				TargetAttributes = {
+					663019E619D2417A00939A1E = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					663019FB19D2417A00939A1E = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 663019E619D2417A00939A1E;
+					};
+				};
+			};
+			buildConfigurationList = 663019E219D2417A00939A1E /* Build configuration list for PBXProject "Vivval" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 663019DE19D2417A00939A1E;
+			productRefGroup = 663019E819D2417A00939A1E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				663019E619D2417A00939A1E /* Vivval */,
+				663019FB19D2417A00939A1E /* VivvalTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		663019E519D2417A00939A1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				663019F219D2417A00939A1E /* Main.storyboard in Resources */,
+				663019F719D2417A00939A1E /* LaunchScreen.xib in Resources */,
+				663019F419D2417A00939A1E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		663019FA19D2417A00939A1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		663019E319D2417A00939A1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				663019EF19D2417A00939A1E /* ViewController.swift in Sources */,
+				663019ED19D2417A00939A1E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		663019F819D2417A00939A1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66301A0319D2417A00939A1E /* VivvalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		663019FE19D2417A00939A1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 663019E619D2417A00939A1E /* Vivval */;
+			targetProxy = 663019FD19D2417A00939A1E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		663019F019D2417A00939A1E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				663019F119D2417A00939A1E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		663019F519D2417A00939A1E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				663019F619D2417A00939A1E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		66301A0419D2417A00939A1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		66301A0519D2417A00939A1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		66301A0719D2417A00939A1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Vivval/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		66301A0819D2417A00939A1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Vivval/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		66301A0A19D2417A00939A1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = VivvalTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vivval.app/Vivval";
+			};
+			name = Debug;
+		};
+		66301A0B19D2417A00939A1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = VivvalTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vivval.app/Vivval";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		663019E219D2417A00939A1E /* Build configuration list for PBXProject "Vivval" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66301A0419D2417A00939A1E /* Debug */,
+				66301A0519D2417A00939A1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66301A0619D2417A00939A1E /* Build configuration list for PBXNativeTarget "Vivval" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66301A0719D2417A00939A1E /* Debug */,
+				66301A0819D2417A00939A1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		66301A0919D2417A00939A1E /* Build configuration list for PBXNativeTarget "VivvalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66301A0A19D2417A00939A1E /* Debug */,
+				66301A0B19D2417A00939A1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 663019DF19D2417A00939A1E /* Project object */;
+}
