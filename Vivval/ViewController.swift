@@ -31,7 +31,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         // Create coordinate wrappers
         var gaLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-        var gaLocationOffset:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitudeOffset, longitudeOffset)
+        var locationOffset:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitudeOffset, longitudeOffset)
         var zoomSpan:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lngDelta)
         
         // Once we have all of the map information, we combine it into a region for display
@@ -40,16 +40,21 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // Link the map region to the view
         self.mv.setRegion(theRegion, animated: true)
         
+        // Map's Viewable Property Configuration
+        mv.pitchEnabled = true
+        mv.showsPointsOfInterest = false
+        mv.zoomEnabled = false
+        mv.showsBuildings = true
         
+        // *** Camera Settings
         // Location Distance
         var locationDistance:CLLocationDistance = 100.0
-        // Creating a pitch for a camera
-        mv.pitchEnabled = true
-        var mapCamera = MKMapCamera(lookingAtCenterCoordinate: gaLocation, fromEyeCoordinate: gaLocationOffset, eyeAltitude: locationDistance)
-//        var mapCamera = mapCameraOC.copyWithZone(nil) as MKMapCamera
+        var mapCamera = MKMapCamera(lookingAtCenterCoordinate: gaLocation, fromEyeCoordinate: locationOffset, eyeAltitude: locationDistance)
+        // Remove Points of Interest
+        
         mv.setCamera(mapCamera, animated: true)
         
-        // Creating a pin
+        // PINS
         var pinAnnotation = MKPointAnnotation()
         pinAnnotation.coordinate = gaLocation
         // Pin needs two pieces of information: title and subtitle
@@ -57,8 +62,35 @@ class ViewController: UIViewController, MKMapViewDelegate {
         pinAnnotation.subtitle = "Where we become cogs of the machine"
         
         self.mv.addAnnotation(pinAnnotation)
-        
+        getMapData()
     }
+    
+    func getMapData() -> Void{
+        // Mocking data for API call
+        let apiKey = "jdfs8A3298Clkp62kH0uf29h29"
+        let centralCoordinates = "34.0121885,-118.4939107"
+        let zoomDelta = "3"
+        let searchTerm = "shoes"
+        
+        let apiURL = NSURL(string: "http://vivval.jitsu.com/api/heatmap/\(apiKey)/\(centralCoordinates)/\(zoomDelta)/\(searchTerm)")
+        //let forecastURL = NSURL(string: "34.026814,-118.501829", relativeToURL: baseURL) // unecessary for now
+        
+        let sharedSession = NSURLSession.sharedSession()
+        let downloadTask: NSURLSessionDownloadTask = sharedSession.downloadTaskWithURL(apiURL, completionHandler: { (location: NSURL!, response: NSURLResponse!, error: NSError!) -> Void in
+            if (error == nil){
+                let dataObject = NSData(contentsOfURL: location)
+                let BlazonDictionary : NSDictionary = NSJSONSerialization.JSONObjectWithData(dataObject, options: nil, error: nil) as NSDictionary
+                println(BlazonDictionary)
+            } else {
+                let networkIssueController = UIAlertController(title: "Error", message: "Unable to Load Data. Connectivity Error!", preferredStyle: .Alert)
+                
+            }
+            
+        })
+        downloadTask.resume()
+    }
+
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
