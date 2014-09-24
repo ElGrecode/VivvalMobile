@@ -54,7 +54,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         mv.setCamera(mapCamera, animated: true)
         
-        // PINS
+        // Initial pin
         var pinAnnotation = MKPointAnnotation()
         pinAnnotation.coordinate = gaLocation
         // Pin needs two pieces of information: title and subtitle
@@ -79,8 +79,26 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let downloadTask: NSURLSessionDownloadTask = sharedSession.downloadTaskWithURL(apiURL, completionHandler: { (location: NSURL!, response: NSURLResponse!, error: NSError!) -> Void in
             if (error == nil){
                 let dataObject = NSData(contentsOfURL: location)
-                let BlazonDictionary : NSDictionary = NSJSONSerialization.JSONObjectWithData(dataObject, options: nil, error: nil) as NSDictionary
-                println(BlazonDictionary)
+                let blazonDictionary : NSDictionary = NSJSONSerialization.JSONObjectWithData(dataObject, options: nil, error: nil) as NSDictionary
+                println(blazonDictionary)
+                // Send the Blazon Dictonary to our own data model for cleanup
+                let mapData = Location(blazonDictionary: blazonDictionary)
+                
+                // Let's see these values in console
+                println("*** searchTerm:")
+                println(mapData.searchTerm)
+                println("*** blazons:")
+                println(mapData.blazons)
+                
+                // dispatch_async is a function that submits a block of code to the dispatch queue managed by GCD
+                // First parameter is what queue we are submitting to
+                // Second parameter is a closure
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    // Get back to main queue to put in pins based on received mapData
+                    println(mapData.blazons)
+                    //self.placePins(mapData.blazons!)
+                })
+                
             } else {
                 let networkIssueController = UIAlertController(title: "Error", message: "Unable to Load Data. Connectivity Error!", preferredStyle: .Alert)
                 
@@ -89,6 +107,22 @@ class ViewController: UIViewController, MKMapViewDelegate {
         })
         downloadTask.resume()
     }
+
+//    //Our place pin function
+//    func placePins(mapData: [NSObject]){
+//        for blaze in mapData {
+//            var latitude:CLLocationDegrees  = blaze.valueForKey("blazonLat")
+//            var longitude:CLLocationDegrees = blaze.blazonLng.toInt()
+//            var pinAnnotation = MKPointAnnotation()
+//            
+//            pinAnnotation.coordinate = gaLocation
+//            // Pin needs two pieces of information: title and subtitle
+//            pinAnnotation.title = "GA"
+//            pinAnnotation.subtitle = "Where we become cogs of the machine"
+//            
+//            self.mv.addAnnotation(pinAnnotation)
+//        }
+//    }
 
     
 

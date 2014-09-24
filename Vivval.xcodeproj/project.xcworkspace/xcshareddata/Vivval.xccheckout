@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>17C7867A-7A70-43F4-9672-906BA2131933</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Vivval</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C9AF5E4E32CF0644985997741682249FAD1FD4B8</key>
+		<string>github.com:narwhaldo/VivvalMobile.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Vivval.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C9AF5E4E32CF0644985997741682249FAD1FD4B8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:narwhaldo/VivvalMobile.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C9AF5E4E32CF0644985997741682249FAD1FD4B8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C9AF5E4E32CF0644985997741682249FAD1FD4B8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Vivval</string>
+		</dict>
+	</array>
+</dict>
+</plist>
