@@ -10,10 +10,14 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var mv: MKMapView!
+    @IBOutlet weak var searchBar: UITextField!
     
+    @IBAction func searchBarValueChanged(sender: AnyObject) {
+        println(searchBar.text)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,25 +56,18 @@ class ViewController: UIViewController, MKMapViewDelegate {
         var mapCamera = MKMapCamera(lookingAtCenterCoordinate: gaLocation, fromEyeCoordinate: locationOffset, eyeAltitude: locationDistance)
         // Remove Points of Interest
         
+        // Search Bar Settings
+        
         mv.setCamera(mapCamera, animated: true)
-        
-//        // Initial pin
-//        var pinAnnotation = MKPointAnnotation()
-//        pinAnnotation.coordinate = gaLocation
-//        // Pin needs two pieces of information: title and subtitle
-//        pinAnnotation.title = "GA"
-//        pinAnnotation.subtitle = "Where we become cogs of the machine"
-        
-       // self.mv.addAnnotation(pinAnnotation)
         getMapData()
     }
     
-    func getMapData() -> Void{
+    func getMapData(searchTerm: String = "all") -> Void{
         // Mocking data for API call
         let apiKey = "jdfs8A3298Clkp62kH0uf29h29"
         let centralCoordinates = "34.0121885,-118.4939107"
         let zoomDelta = "3"
-        let searchTerm = "shoes"
+        let searchTerm = searchTerm
         
         let apiURL = NSURL(string: "http://vivval.jitsu.com/api/heatmap/\(apiKey)/\(centralCoordinates)/\(zoomDelta)/\(searchTerm)")
         //let forecastURL = NSURL(string: "34.026814,-118.501829", relativeToURL: baseURL) // unecessary for now
@@ -110,6 +107,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
 
     //Our place pin function
     func placePins(mapData: [NSObject]){
+        // Remove all pins first
+        self.mv.removeAnnotations(self.mv.annotations)
+        
         for blazon in mapData {
             var blazonLatitude:CLLocationDegrees  = blazon.valueForKey("blazonLat") as Double
             var blazonLongitude:CLLocationDegrees = blazon.valueForKey("blazonLng") as Double
@@ -126,12 +126,32 @@ class ViewController: UIViewController, MKMapViewDelegate {
             self.mv.addAnnotation(pinAnnotation)
         }
     }
-
+    
+    //func filterContentForSearchText(searchText: String) {
+    //    println("Do something with a search")
+  //  }
+    
+//    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: //String!) -> Bool {
+//        self.filterContentForSearchText(searchString)
+//        return true
+//    }
+    
+//    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
+//        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+//        return true
+//    }
     
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // UIText Field Delegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        getMapData(searchTerm: textField.text)
+        return true
     }
 
 
