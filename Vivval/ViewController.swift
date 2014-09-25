@@ -117,11 +117,11 @@ class ViewController: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
             var pinLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(blazonLatitude, blazonLongitude)
         
             var pinAnnotation = MKPointAnnotation()
+
             pinAnnotation.coordinate = pinLocation
             // Pin needs two pieces of information: title and subtitle
             pinAnnotation.title = blazon.valueForKey("blazonName") as String
             pinAnnotation.subtitle = blazon.valueForKey("blazonText") as String
-            
             
             self.mv.addAnnotation(pinAnnotation)
         }
